@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+
+}
+
+
+html{
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    background: #f1f1f1;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    transition: padding .2s;
+    color: #4b5c69;
+}

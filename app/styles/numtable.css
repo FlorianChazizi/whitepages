@@ -1,0 +1,113 @@
+.table-wrapper {
+    width: 80%;
+    height: 100vh;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.table-title{
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    color: #181819;
+    margin-bottom: 2rem;
+}
+
+/* Tabs Navigation */
+.table-tabs {
+    display: flex;
+    list-style: none;
+    background: rgb(232,233,236);
+    border-top-left-radius: 12px;
+}
+.tab-content{
+    background-color: white;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+.table-tabs li {
+    padding: 18px 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.table-tabs li:first-child{
+    border-top-left-radius: 12px;
+
+}
+.table-tabs li.active {
+    background-color: rgb(255, 255, 255);
+    color: #4b5c69;
+    font-weight: bold;
+}
+
+.table-tabs li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Table Styling */
+.table-container {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th {
+    background: #e8e9ec;
+    color: #4b5c69;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+
+}
+
+.table-container td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #f1f2f4
+}
+
+.table-container td a {
+    color: #e60073; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table-container td span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.table-container td span svg {
+    color: #4b5c69;
+}
+
+/* Pill Number Style */
+.number-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.pill {
+    background: #d1d5db;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.pill:hover {
+    text-decoration: none;
+    color: #181819;
+    background: #ffdf61;
+}
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        width: 100%;
+    }
+}
