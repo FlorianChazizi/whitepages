@@ -18,15 +18,15 @@ const NumTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resMostWanted = await fetch('https://whitepages.vercel.app/api/mostviewed');
+        const resMostWanted = await fetch('/api/mostviewed');
         const dataMostWanted = await resMostWanted.json();
         setMostWantedData(dataMostWanted.numbers);
 
-        const resRecentlyAdded = await fetch('https://whitepages.vercel.app/api/latestcreated');
+        const resRecentlyAdded = await fetch('/api/latestcreated');
         const dataRecentlyAdded = await resRecentlyAdded.json();
         setRecentlyAddedData(dataRecentlyAdded.numbers);
 
-        const resRecentlySearched = await fetch('https://whitepages.vercel.app/api/lastviewed');
+        const resRecentlySearched = await fetch('/api/lastviewed');
         const dataRecentlySearched = await resRecentlySearched.json();
         setRecentlySearchedData(dataRecentlySearched.numbers);
       } catch (error) {

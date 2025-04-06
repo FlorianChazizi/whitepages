@@ -7,7 +7,7 @@ const DangerousNumber = () => {
   useEffect(() => {
     const fetchDisturbing = async () => {
       try {
-        const res = await fetch('https://whitepages.vercel.app/api/dangerous');
+        const res = await fetch('/api/dangerous');
         const data = await res.json();
         setNumbers(data.numbers);
       } catch (error) {

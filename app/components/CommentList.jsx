@@ -28,7 +28,7 @@ const CommentsList = ({ numberData }) => {
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const res = await fetch(`https://whitepages.vercel.app/api/comments/${number}`);
+                const res = await fetch(`/api/comments/${number}`);
                 const data = await res.json();
                 if (res.ok) {
                     setComments(data.comments);

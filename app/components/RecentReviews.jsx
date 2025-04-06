@@ -24,7 +24,7 @@ const RecentReviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await fetch('https://whitepages.vercel.app/api/numbers'); // Adjust the URL as needed
+        const res = await fetch('api/numbers'); // Adjust the URL as needed
         const data = await res.json();
         setReviews(data.numbers);
       } catch (error) {
