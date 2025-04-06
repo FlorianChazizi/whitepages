@@ -9,16 +9,14 @@ const CommentsList = ({ numberData }) => {
     const [dangerRate, setDangerRate] = useState(0);
     const [loading, setLoading] = useState(true);
 
-    // Define the colors for each rank
     const rankColors = {
-        useful: '#78e799',    // Green
-        safe: '#4d9981',      // Light Green
-        neutral: '#169dc4',   // Blue
-        annoying: '#e6523e',  // Red
-        dangerous: '#af1c6b'  // Dark Red
-    };
+        useful: 'rgba(35, 181, 79, 0.7)',    // Light green
+        safe: 'rgba(77, 153, 129, 0.7)',       // Lighter teal
+        neutral: 'rgba(22, 157, 196, 0.5)',    // Light blue
+        annoying: 'rgba(230, 82, 62, 0.7)',    // Light red
+        dangerous: 'rgba(175, 28, 107, 0.8)'   // Light dark pink
+      };
 
-    // Define the Greek labels for each rank
     const rankLabels = {
         useful: 'Χρήσιμο',
         safe: 'Ασφαλές',
@@ -54,7 +52,6 @@ const CommentsList = ({ numberData }) => {
             <h3 className='list-title'>Σχόλια για τον αριθμό {numberData?.number}</h3>
 
 
-            {/* Comments */}
             {comments.map((comment, index) => (
                 <div key={index} className="comment-container">
                     <div className="rank-container">

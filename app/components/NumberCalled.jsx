@@ -12,7 +12,7 @@ const NumberCalled = ({ setNumberData }) => {
   
       const fetchNumberData = async () => {
         try {
-          const res = await fetch(`http://localhost:3000/api/numbers/${number}`);
+          const res = await fetch(`/api/numbers/${number}`);
           if (!res.ok) {
             throw new Error(`API responded with status ${res.status}`);
           }

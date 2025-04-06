@@ -9,7 +9,7 @@ const TotalReviews = ({ number, onReviewData }) => {
 
         const fetchTotalReviews = async () => {
             try {
-                const res = await fetch(`http://localhost:3000/api/reviews/${number}`);
+                const res = await fetch(`/api/reviews/${number}`);
                 if (!res.ok) {
                     throw new Error(`API responded with status ${res.status}`);
                 }

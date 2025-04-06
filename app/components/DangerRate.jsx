@@ -25,21 +25,21 @@ const DangerRate = ({ number }) => {
 
     return (
         <div className="danger-meter-container">
-        <div className="w-1/2 bg-gray-200 rounded-full h-4 overflow-hidden relative">
+        <div className="w-32 bg-gray-200 rounded-full h-4 overflow-hidden relative">
           <div
             className="h-full transition-all duration-300"
             style={{
               width: `${dangerRate}%`,
               backgroundColor:
                 dangerRate < 20
-                  ? '#4d9981'
+                  ? '#f04e4e'
                   : dangerRate < 40
-                  ? '#169dc4'
+                  ? '#f04e4e'
                   : dangerRate < 60
                   ? '#f0ad4e'
                   : dangerRate < 80
-                  ? '#e6523e'
-                  : '#af1c6b',
+                  ? '#f04e4e'
+                  : '#f04e4e',
             }}
           />
         </div>

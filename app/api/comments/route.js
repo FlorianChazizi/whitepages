@@ -15,7 +15,7 @@ export async function POST(req) {
 
     const db = await createConnection();
 
-    // 1. Get the number ID
+    // Get the number ID
     const [numberRows] = await db.execute(
       'SELECT id FROM numbers WHERE number = ?',
       [number]
@@ -27,7 +27,7 @@ export async function POST(req) {
 
     const numberId = numberRows[0].id;
 
-    // 2. Insert the comment with the rating (rank)
+    // Insert the comment with the rating (rank)
     const allowedRatings = ['useful', 'safe', 'neutral', 'annoying', 'dangerous'];
 
     if (!allowedRatings.includes(rank)) {
@@ -38,6 +38,11 @@ export async function POST(req) {
     await db.execute(
       'INSERT INTO comments (number_id, comment, created_at, `rank`) VALUES (?, ?, NOW(), ?)',
       [numberId, comment, rank]
+    );
+    // update the date of the last review of the number
+    await db.execute(
+      'UPDATE numbers SET last_review = NOW() WHERE id = ?',
+      [numberId]
     );
 
     return NextResponse.json({ success: true }, { status: 200 });

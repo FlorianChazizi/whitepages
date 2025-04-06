@@ -20,7 +20,7 @@ export async function GET(req, { params }) {
     
         // Fetch comments with rank for the number
         const [comments] = await db.execute(
-            'SELECT comment, created_at, `rank` FROM comments WHERE number_id = ?',
+            'SELECT comment, created_at, `rank` FROM comments WHERE number_id = ?  ORDER BY comments.created_at DESC',
             [numberId]
         );
 

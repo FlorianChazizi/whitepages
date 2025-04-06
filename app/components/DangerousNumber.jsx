@@ -1,46 +1,53 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import '../styles/sidebar.css'
 const DangerousNumber = () => {
-  return (
+    const [numbers, setNumbers] = useState([]);
 
-    <div className=''>
-        
-    <h2 className='side-header'>Επικίνδυνοι  Αριθμοί</h2>
+  useEffect(() => {
+    const fetchDisturbing = async () => {
+      try {
+        const res = await fetch('/api/dangerous');
+        const data = await res.json();
+        setNumbers(data.numbers);
+      } catch (error) {
+        console.error('Failed to fetch disturbing numbers:', error);
+      }
+    };
 
-    <div className='instances'>
-        <dt>
-            <strong>
-                <a href='' className='arithmos' target='_blank' rel='noopener noreferrer'>6944634180</a>
-            </strong>
-            
-        </dt>
-        <dd className='desc'>
-        Με σταμάτησαν στον δρόμο για να μου δώσουν ένα χαρτάκι που είχε πάνω του αυτόν τον αριθμό και…
-        </dd>
-        <dt>
-            <strong>
-                <a href='' className='arithmos' target='_blank' rel='noopener noreferrer'>6944634180</a>
-            </strong>
-            
-        </dt>
-        <dd className='desc'>
-        Με σταμάτησαν στον δρόμο για να μου δώσουν ένα χαρτάκι που είχε πάνω του αυτόν τον αριθμό και…
-        </dd>
-        <dt>
-            <strong>
-                <a href='' className='arithmos' target='_blank' rel='noopener noreferrer'>6944634180</a>
-            </strong>
-            
-        </dt>
-        <dd className='desc'>
-        Με σταμάτησαν στον δρόμο για να μου δώσουν ένα χαρτάκι που είχε πάνω του αυτόν τον αριθμό και…
-        </dd>
-    </div>
+    fetchDisturbing();
+  }, []);
 
-</div>
 
-  )
+
+    return (
+
+        <div className=''>
+
+            <h2 className='side-header'>Επικίνδυνοι  Αριθμοί</h2>
+
+      <div className='instances'>
+        {numbers.map((item) => (
+          <React.Fragment key={item.comment_id}>
+            <dt>
+              <strong>
+                <a
+                  href={`/numbers/${item.number}`}
+                  className='arithmos'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {item.number}
+                </a>
+              </strong>
+            </dt>
+            <dd className='desc'>{item.comment}</dd>
+          </React.Fragment>
+        ))}
+      </div>
+      </div>
+
+    )
 }
 
 export default DangerousNumber
