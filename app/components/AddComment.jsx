@@ -18,7 +18,7 @@ const AddComment = ({ numberData }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/comments', {
+      const response = await fetch('https://whitepages.vercel.app/api/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

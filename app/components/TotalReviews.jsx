@@ -9,7 +9,7 @@ const TotalReviews = ({ number, onReviewData }) => {
 
         const fetchTotalReviews = async () => {
             try {
-                const res = await fetch(`/api/reviews/${number}`);
+                const res = await fetch(`https://whitepages.vercel.app/api/reviews/${number}`);
                 if (!res.ok) {
                     throw new Error(`API responded with status ${res.status}`);
                 }

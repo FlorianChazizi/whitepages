@@ -29,7 +29,7 @@ const Banner = () => {
     }
 
     try {
-      const response = await fetch('/api/checknumber', {
+      const response = await fetch('https://whitepages.vercel.app/api/checknumber', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ number }),
