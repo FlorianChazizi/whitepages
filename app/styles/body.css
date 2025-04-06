@@ -7,7 +7,7 @@
     margin-right: 10%;
 }
 
-@media screen and (max-width: 1406px) {
+@media screen and (max-width: 768px) {
 
     #main-wrapper,
     #footer,
@@ -40,6 +40,7 @@
         margin-right: 0;
     }
     .content {
+        width: 95%;
         margin-right: 0;
         margin-bottom: 20px;
     }

@@ -69,11 +69,17 @@ td{
     }
     .t-cta{
         padding: 4px 8px;
+        font-size: 0.7rem;
     }
     th{
         padding: 0.5rem;
     }
     td{
         padding: 0.5rem;
+    }
+}
+@media (max-width: 390px) {
+    .t-cta{
+        font-size: 0.5rem;
     }
 }

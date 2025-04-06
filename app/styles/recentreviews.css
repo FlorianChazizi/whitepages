@@ -61,6 +61,14 @@ span {
     overflow: hidden;
     color: #4b5c69;
 }
-.recent-rank{
+
+.recent-rank {
     color: white;
+}
+
+@media (max-width: 768px) {
+    .body-title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
 }

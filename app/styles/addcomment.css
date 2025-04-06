@@ -36,6 +36,18 @@
     flex: 0 0 auto;
     width: 270px;
 }
+@media (max-width: 768px) {
+    .form-columns {
+        display: block;
+    }
+    .column-1 {
+        width: 100%;
+    }
+    .column-2 {
+        width: 100%;
+    }
+}
+
 
 .txtarea {
     border: 2px solid rgb(216 216 216 / .4);
